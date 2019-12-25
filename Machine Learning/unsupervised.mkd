@@ -1,0 +1,87 @@
+# Unsupervised Machine learning
+
+### Clustering
+#### K-Means Algorithm:
+ Most popular clustering method to cluster. The below are the steps used to execute this method:
+ 
+#####
+ 
+**Step 1 - Cluster Assignment**: 
+
+Randomly initialize two points, called the *cluster centroids*. 
+
+Now that there are two random centroids, all the data points near their corresponding centroids 
+will be clustered into that group/centroid group.
+
+######
+
+**Step 2 - Move Centroid Step**: 
+
+Take the centroids, and move them to the average(mean) of the
+ data points. Once the centroids have been moved to the average, recalculate which data points
+ belong to which cluster (based on distance to the centroids)
+ 
+ 
+######
+
+**Step 3 - Repeat**: 
+
+ Keep iterating over steps 1 & 2 until the k-means has converged.
+ 
+#####
+
+##### K-means algorithm breakdown:
+
+**Inputs:**
+* K =  Number of Clusters
+* Training Set = {x(1),x(2),...x(m)}
+
+#####
+
+#### Optimization Objective:
+
+Useful to debug K-means, and how to find better clusters and 
+avoid local optima. 
+
+
+**b**
+
+#####
+
+#### Random Initialization:
+
+How to avoid local optima.
+
+* Number of cluster centroids (K) < number of training examples (m). K < m
+* K-means can converge to different solutions based where the random centroid 
+was initiated. This can lead to unwanted local optima. 
+* It is good practice to try multiple random initializations, by
+running k-means multiple times. 
+
+#####
+
+
+#### Choosing Number of Clusters:
+
+The most common way of choosing clusters is doing it manually. Currently
+there is not a "safe" method of doing this automatically. 
+
+* Looking at visualizations
+* Looking at output of the clustering algorithm
+* Elbow Method: Run k-means with various clusters and compute the
+distortion. The elbow method can sometimes be difficult to use because
+there isn't a drastic difference between distortions. 
+* Analyze the downstream purpose (t-shirt size example)
+
+
+
+#####
+
+##### Note:
+
+#####
+
+##### Terms:
+
+* **Distortion Function:** 
+* **Elbow Method:**
