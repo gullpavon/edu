@@ -1,16 +1,22 @@
 # Unsupervised Machine learning
+By Gull Pavon
 
 ### Clustering
 #### K-Means Algorithm:
- Most popular clustering method to cluster. The below are the steps used to execute this method:
+ K-means is one of the most popular (partitioning) clustering methods in unsupervised machine learning.
+ K-means can be seen as an optimization problem. A dataset is provided along with a
+ prespecified number of clusters. The algorithm then minimizes the 
+ sum of squared errors (SSE). K-means divides the data into non-overlapping clusters. 
+ 
+ The below are the steps used to execute K-means:
  
 #####
  
 **Step 1 - Cluster Assignment**: 
 
-Randomly initialize two points, called the *cluster centroids*. 
+Randomly initialize (two or more) points, called the *cluster centroids*. 
 
-Now that there are two random centroids, all the data points near their corresponding centroids 
+Now that there are (two or more) random centroids, all the data points near their corresponding centroids 
 will be clustered into that group/centroid group.
 
 ######
@@ -43,8 +49,9 @@ Take the centroids, and move them to the average(mean) of the
 Useful to debug K-means, and how to find better clusters and 
 avoid local optima. 
 
+* We want to reduce error (the distance between the centroid and the data point)
 
-**b**
+
 
 #####
 
@@ -64,30 +71,119 @@ running k-means multiple times.
 #### Choosing Number of Clusters:
 
 The most common way of choosing clusters is doing it manually. Currently
-there is not a "safe" method of doing this automatically. 
+there is not a "safe" method of doing this automatically. Some common methods:
 
 * Looking at visualizations
 * Looking at output of the clustering algorithm
-* Elbow Method: Run k-means with various clusters and compute the
+* Elbow Method: Run k-means with various clusters and computing the
 distortion. The elbow method can sometimes be difficult to use because
 there isn't a drastic difference between distortions. 
 * Analyze the downstream purpose (t-shirt size example)
 
+Note: When increasing the number of clusters, you will always get a reduction in error. 
+This is a part of the reason why the elbow method can be tricky in terms of determing
+the number of clusters. 
+ 
+#####
 
+
+#### Determining K-means accuracy:
+
+1. **External Approach:** Compare the clusters with the ground truth, if available. This refers to having labels for your data. 
+
+2. **Internal Apprach:** Average distance between data points within a cluster. 
+#####
+
+##### Note(s):
+* Running K-means on uniform data will still provide clusters. It
+does not tell you when the data just does not cluster. This can
+lead your research in the wrong direction.
+#####
+
+
+#### Gaussian Mixture Model:
 
 #####
 
-##### Note:
+#### Hierarchical Clustering: 
+
+What two (or more) things are most similar. 
 
 #####
+
+
+
 
 ##### Terms:
 
-* **Coordinate Descent:**
-* **Cost Function:**
-* **Distortion Function:** 
-* **Elbow Method:**
-* **Euclidean Distance:**
+* **Centroid:** The center point in a cluster, and should be the average
+position of all points in a cluster; hence (K-means). 
+
+* **Coordinate Descent:** An optimization algorithm that successively minimizes along
+coordinate directions to find the minimum of a function. For example, if you want to walk from
+point A to point B. You must walk along the streets (coordinates). You cannot go diagonally and
+walk over buildings/structures. You're confined to a path. 
+
+* **Cosine Similarity:**
+
+* **Cost Function:** Measures the performance of a Machine Learning mode, for given data.
+Cost function quantifies the error or reward between predicted values and expected values. 
+It presents it in the form of a single real number. 
+
+* **Distance Matrix:** Matrix that represents the distance of data from each centroids. Used
+to assign data points to a specific centroid.
+
+* **Distortion:** The distortion is the sum of square errors, also known as SSE (see below). 
+Distortion usually decreases rapidly and then slowly flattens out. This forms the "elbow" 
+line graph when using the elbow method. 
+
+* **Elbow Method:** A method to determine the number of clusters. (See above for details).
+
+* **Euclidean Distance:** In two dimensions it iss the same thing as the pythagorean 
+theorem. It is the ordinary straight-line distance between two points. Used to figure out 
+the similarity/distance of the data. Used to create a distance matrix.  See also Cosine Similarity.
+
+* **Gaussian Function:** The Gaussian is a characterisc symmetric "bell curve" shape. 
+Often used to represent the probability density function of a normally distributed random variable.
+
+* **Gaussian Shape:**
+
+* **Gaussian Mixture:** Gaussian mixture models can be used to cluster unlabeled data
+in much the same way as K-means. Some key differences are:
+    * Gaussian mixture can handle data that is not circular. K-means creates circles as clusters, however
+    data clusters aren't always circular. Gaussian mixture can handle very oblong clusters (think long ovales).
+    * Gaussian mixture will perform soft classification. While
+    K-means will perform hard classification. In other words K-means will tell us
+    what data point belong to which cluster but won't provide us with the probabilities 
+    that a given data point belongs to each of the possible clusters. 
+    
+
+* **Global Minimum:**
+
+* **Global Optimum:**
+
 * **Gradient Descent:**
+
+* **Hard Classification:** Used in K-means, each data point can only be in one cluster. 
+
+* **K Nearest Neighbors:**
+
+* **K-Means++:**
+
+* **K-Medoids:** See also PAM (Partitioning Around Medoids)
+
+* **Least-Squares:**
+
+* **Local Minima:**
+
+* **Local Optima:**
+
 * **Responsibility:**
+
 * **Soft max function:**
+
+* **Soft classification:**
+
+* **SSE:** Also known as sum of square errors. This just means we determine the error, for
+k-means it's the distance of the data from the centroid. Then Square the error and finally
+sum all the squared errors. 

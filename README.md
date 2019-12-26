@@ -1,2 +1,2 @@
 # edu
-*test
+Things to reference along the way :) 
