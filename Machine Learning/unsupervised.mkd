@@ -83,5 +83,11 @@ there isn't a drastic difference between distortions.
 
 ##### Terms:
 
+* **Coordinate Descent:**
+* **Cost Function:**
 * **Distortion Function:** 
 * **Elbow Method:**
+* **Euclidean Distance:**
+* **Gradient Descent:**
+* **Responsibility:**
+* **Soft max function:**
